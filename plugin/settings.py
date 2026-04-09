@@ -33,11 +33,9 @@ config.plugins.mediaplayer2.onMovieStart = ConfigSelection(default="resume", cho
         ("resume", _("Resume from last position")),
         ("beginning", _("Start from the beginning"))])
 
-SERVICEMP3 = 4097
-SERVICE_GSTPLAYER = 5001
-SERVICE_EXTEPLAYER3 = 5002
+SERVICEFFMPEG = 0x1337
 
-LIBMEDIA_CHOICES = {SERVICEMP3: _('Gstreamer')}
+LIBMEDIA_CHOICES = {SERVICeFFMPEG: _('FFMPEG')}
 
 config.plugins.mediaplayer2.useLibMedia = ConfigYesNo(default=False)
 libMediaTest = False

@@ -795,7 +795,7 @@ class MediaPlayer(Screen, InfoBarBase, SubsSupportStatus, SubsSupport, InfoBarSe
             self.savePlaylistOnExit = False
             self.isAudioCD = True
             for file in self.cdAudioTrackFiles:
-                ref = eServiceReference(4097, 0, file)
+                ref = eServiceReference(0x1337, 0, file)
                 self.playlist.addFile(ref)
             try:
                 from Plugins.Extensions.CDInfo.plugin import Query
@@ -931,7 +931,7 @@ class MediaPlayer(Screen, InfoBarBase, SubsSupportStatus, SubsSupport, InfoBarSe
                 if recursive:
                     if x[0][0] != directory:
                         self.copyDirectory(x[0][0])
-            elif filelist.getServiceRef() and filelist.getServiceRef().type == 4097:
+            elif filelist.getServiceRef() and filelist.getServiceRef().type == 0x1337:
                 self.playlist.addFile(x[0][0])
         self.playlist.updateList()
 
@@ -1353,7 +1353,7 @@ def filescan_open(list, session, **kwargs):
         if file.mimetype == "video/MP2T":
             stype = 1
         else:
-            stype = 4097
+            stype = 0x1337
         ref = eServiceReference(stype, 0, file.path)
         mp.playlist.addFile(ref)
 
@@ -1377,7 +1377,7 @@ def movielist_open(list, session, **kwargs):
     if f.mimetype == "video/MP2T":
         stype = 1
     else:
-        stype = 4097
+        stype = 0x1337
     if InfoBar.instance:
         path = os.path.split(f.path)[0]
         if not path.endswith('/'):
