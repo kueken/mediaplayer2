@@ -4,7 +4,7 @@ from time import strftime
 import traceback
 
 from Components.ActionMap import ActionMap, HelpableActionMap
-from Components.FileList import FileList, FILE_IS_DIR
+from Components.FileList import FileList
 from Components.Harddisk import harddiskmanager
 from Components.Label import Label
 from Components.MediaPlayer import PlayList, STATE_STOP, STATE_NONE
